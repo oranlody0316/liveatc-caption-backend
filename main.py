@@ -114,6 +114,6 @@ async def update_airport(icao: str):
         )
     
 @app.post('/metar')
-async def add_metar(metar_text: MetarText):
-    print(metar_text)
-    return Metar.Metar(metar_text.metar_text)
+async def add_metar(request: MetarText):
+    print(request)
+    return Metar.Metar(request.query)
